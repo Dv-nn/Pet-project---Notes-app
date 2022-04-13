@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+	box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #b3eefe;
+}
+.wrapper {
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 265px);
+  gap: 15px;
+}
+.note, .add-box {
+  background-color: #fff;
+  height: 250px;
+  border-radius: 7px;
+  padding: 15px 20px 20px;
+}
+.add-box, .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: 2px dashed #2d849c;
+  cursor: pointer;
+}
+.icon i {
+  font-size: 40px;
+  color: #2d849c;
+}
+.add-box p {
+  color: #2d849c;
+  font-weight: 500;
+  margin-top: 20px;
+}
+.wrapper .note {
+  color: #666;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 265px;
+}
+.note .details {
+  height: 100%;
+}
+.details p {
+  font-weight: 600;
+  text-transform: uppercase;
+  max-height: 50px;
+  word-wrap: break-word;
+  overflow-y: auto;
+}
+.details p::-webkit-scrollbar,
+.details span::-webkit-scrollbar
+{
+  width: 8px;
+}
+.details p::-webkit-scrollbar-track,
+.details span::-webkit-scrollbar-track
+{
+  background: #ebebeb;
+}
+.details p::-webkit-scrollbar-thumb,
+.details span::-webkit-scrollbar-thumb
+{
+  background-color: #c9caca;
+  border-radius: 10px;
+
+}
+.details span {
+  margin-top: 10px;
+  display: block;
+  max-height: 106px;
+  word-wrap: break-word;
+  overflow-y: auto;
+}
+.bottom-content {
+  margin-top: 10px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e1e1e1;
+}
+.bottom-content span {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+}
+.settings {
+  position: relative;
+}
+.settings i {
+  cursor: pointer;
+  font-size: 16px;
+}
+.menu {
+  box-shadow:  0 0 6px #e1e1e1;
+  position: absolute;
+  bottom: 0;
+  right: -5px;
+  border-radius: 5px;
+  background-color: #f1f9fd;
+  padding: 5px 10px;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom right;
+}
+.settings.show .menu{
+  transform: scale(1);
+}
+.menu li {
+  list-style-type: none;
+  height: 25px;
+  border-radius: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.menu li:hover {
+  color: #333;
+  font-weight: 600;
+}
+.menu li i {
+  font-size: 11px;
+  margin-right: 8px;
+}
+
+
+.popup-box, .popup-box .popup {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+.popup-box.show, .popup-box.show .popup {
+  opacity: 1;
+  pointer-events: auto;
+}
+.popup-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+.popup-box .popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  width: 100%;
+  z-index: 3;
+  color: #333;
+}
+.popup .content {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 15px 25px 25px;
+}
+.popup .content header {
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content header p {
+  font-weight: 500;
+  font-size: 20px;
+}
+.content header i {
+  cursor: pointer;
+  font-size: 20px;
+  color: #666;
+  transition: color 0.3s ease;
+}
+.content header i:hover {
+  color: #333;
+}
+.content form {
+  margin-top: 10px;
+}
+.content form :where(input, textarea) {
+  width: 100%;
+  border: 1px solid #999;
+  border-radius: 4px;
+  outline: none;
+  height: 50px;
+  font-size: 16px;
+  padding: 0 15px;
+  font-family: inherit;
+}
+.content form textarea {
+  padding: 10px 15px;
+  resize: vertical;
+  height: 150px;
+}
+.content form .row {
+  margin-bottom: 15px;
+}
+.content form label {
+  display: block;
+  font-size: 16px;
+}
+.content form button {
+  width: 100%;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background-color: #b3eefe;
+  font-size: 16px;
+  color: #333;
+  transition: color 0.3s ease background-color 0.3s ease;
+}
+.content form button:hover {
+  background-color: #2d849c;
+  color: #fff;
+}
